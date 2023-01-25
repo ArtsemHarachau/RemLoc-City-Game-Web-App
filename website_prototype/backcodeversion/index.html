@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <title>remloccitygame</title>
+  </head>
+  <body>
+    <div id="parent">
+      <h1>RemLoc City Game</h1>
+
+      <div id="grid-container-parent" class="grid-container">
+        <!--<span class="material-icons item1">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>
+        <span class="material-icons">&#xe55c;</span>-->
+      </div>
+
+      <!--<span class="material-icons">&#xe55c;</span>-->
+      <!--<div id="tooltipDiv" class="tooltip">
+        <span class="material-icons">&#xe0c8;</span>
+        <span class="tooltiptext">Task 1</span>
+      </div>-->
+
+      <!--<span class="material-icons">&#xe0c8;</span>
+      <span class="material-icons">&#xe0c8;</span>
+      <span class="material-icons">&#xe177;</span>
+
+      <span class="material-icons">&#xe931;</span>
+      <span class="material-icons">&#xe930;</span>
+      <span class="track"><span class="material-icons">&#xf108;</span></span>-->
+    </div>
+
+    <script>
+      function createTrackElemWithTask(
+        divParent,
+        tooltipClass,
+        tooltipTextClass,
+        tooltipText,
+        trackElem,
+        elemCode,
+        leftMargin,
+        columnGrid,
+        rowGrid
+      ) {
+        //div component for Tooltip
+        //let divParent = document.createElement("div");
+        divParent.className = tooltipClass;
+
+        if (leftMargin) {
+          divParent.style.marginLeft = "32px";
+        }
+
+        //location material icons
+        trackElem.className = "material-icons";
+        trackElem.innerHTML = elemCode;
+        divParent.appendChild(trackElem);
+
+        //span component for TooltipText
+        let spanTooltipText = document.createElement("span");
+        spanTooltipText.className = tooltipTextClass;
+        spanTooltipText.innerText = "\n" + tooltipText;
+
+        divParent.style.gridColumn = columnGrid;
+        divParent.style.gridRow = rowGrid;
+
+        //add TooltipText to Tooltip div
+        divParent.appendChild(spanTooltipText);
+
+        return divParent;
+      }
+
+      //add track's elements to grid in html
+      let gridContainerParent = document.querySelector(
+        "#grid-container-parent"
+      );
+
+      let maxNumberOfRows = 9;
+      let maxNumberOfColumns = 22;
+      const arrayAnglesOfRotation = [
+        296.89, 108.89, -45.85, -29.6, -29.6, -29.6, 5.69, 1.63, -3.7, 5.8,
+        20.67, 29.44, 27.96, 25.96, 25.67, 25.45, 23.89,
+      ];
+      let indexOfArrayAngles = 0;
+
+      let countRow = 1;
+      for (let i = 1; i <= maxNumberOfColumns; i++) {
+        let trackElem = document.createElement("span");
+        trackElem.className = "material-icons";
+
+        trackElem.style.gridColumn = i;
+
+        //
+
+        if (i == 5) {
+          //div component for Tooltip
+          let divParent = document.createElement("div");
+          // divParent.className = "tooltip";
+          // divParent.style.marginLeft = "32px";
+
+          // //location material icons
+          // trackElem.innerHTML = "&#xe0c8;";
+          // divParent.appendChild(trackElem);
+
+          // //span component for TooltipText
+          // let spanTooltipText = document.createElement("span");
+          // spanTooltipText.className = "tooltiptext1";
+          // spanTooltipText.innerText = "\nTask 1";
+
+          // divParent.style.gridColumn = i;
+          // divParent.style.gridRow = -i;
+
+          // //add TooltipText to Tooltip div
+          // divParent.appendChild(spanTooltipText);
+
+          // gridContainerParent.appendChild(divParent);
+
+          //createTrackElemWithTask(divParent, "tooltip", "tooltiptext1", "\nTask 1", trackElem, "&#xe0c8;", true, i, -i);
+
+          gridContainerParent.appendChild(
+            createTrackElemWithTask(
+              divParent,
+              "tooltip",
+              "tooltiptext1",
+              "Task 1",
+              trackElem,
+              "&#xe0c8;",
+              true,
+              i,
+              -i
+            )
+          );
+
+          continue;
+        } else if (i == 9) {
+          //div component for Tooltip
+          let divParent = document.createElement("div");
+          divParent.className = "tooltip";
+
+          //location material icons
+          trackElem.innerHTML = "&#xe0c8;";
+          divParent.appendChild(trackElem);
+
+          //span component for TooltipText
+          let spanTooltipText = document.createElement("span");
+          spanTooltipText.className = "tooltiptext2";
+          spanTooltipText.innerText = "\nTask 2";
+
+          divParent.style.gridColumn = i;
+          divParent.style.gridRow = -i;
+
+          divParent.style.marginTop = "16px";
+          divParent.style.marginLeft = "4px";
+
+          //add TooltipText to Tooltip div
+          divParent.appendChild(spanTooltipText);
+
+          gridContainerParent.appendChild(divParent);
+          continue;
+        } else if (i == 14) {
+          //div component for Tooltip
+          let divParent = document.createElement("div");
+          divParent.className = "tooltip";
+
+          //location material icons
+          trackElem.innerHTML = "&#xe0c8;";
+          divParent.appendChild(trackElem);
+
+          //span component for TooltipText
+          let spanTooltipText = document.createElement("span");
+          spanTooltipText.className = "tooltiptext3";
+          spanTooltipText.innerText = "\nTask 3";
+
+          divParent.style.gridColumn = i;
+
+          countRow++;
+          divParent.style.gridRow = countRow;
+          countRow--;
+
+          //add TooltipText to Tooltip div
+          divParent.appendChild(spanTooltipText);
+
+          gridContainerParent.appendChild(divParent);
+          continue;
+        } else if (i == 22) {
+          //div component for Tooltip
+          let divParent = document.createElement("div");
+          divParent.className = "tooltip";
+
+          //final place material icons
+          trackElem.innerHTML = "&#xe177;";
+          divParent.appendChild(trackElem);
+
+          //span component for TooltipText
+          let spanTooltipText = document.createElement("span");
+          spanTooltipText.className = "tooltiptext4";
+          spanTooltipText.innerText = "\nFinal place";
+
+          divParent.style.gridColumn = i - 1;
+
+          //countRow++;
+          divParent.style.gridRow = countRow;
+
+          divParent.style.marginTop = "20px";
+          divParent.style.marginLeft = "32px";
+
+          //add TooltipText to Tooltip div
+          divParent.appendChild(spanTooltipText);
+
+          gridContainerParent.appendChild(divParent);
+          continue;
+        }
+        //
+
+        if (i == 1) {
+          trackElem.style.gridColumn = i + 3;
+          trackElem.style.gridRow = -i;
+
+          trackElem.style.marginTop = "48px";
+          trackElem.innerHTML = "&#xe55c;";
+
+          gridContainerParent.appendChild(trackElem);
+          continue;
+        } else if (i >= 10 && i <= 13) {
+          let spanParent = document.createElement("span");
+          spanParent.className = "track";
+          spanParent.style.transform =
+            "rotate(" + arrayAnglesOfRotation[indexOfArrayAngles] + "deg)";
+          indexOfArrayAngles++;
+
+          spanParent.style.gridColumn = i;
+          spanParent.style.gridRow = 1;
+
+          //trackElem.style.gridRow = 1;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+          trackElem.style.fontSize = "56px";
+
+          spanParent.appendChild(trackElem);
+
+          gridContainerParent.appendChild(spanParent);
+
+          continue;
+        } else if (i >= 15 && i <= 18) {
+          let spanParent = document.createElement("span");
+          spanParent.className = "track";
+          spanParent.style.transform =
+            "rotate(" + arrayAnglesOfRotation[indexOfArrayAngles] + "deg)";
+          indexOfArrayAngles++;
+
+          spanParent.style.gridColumn = i;
+
+          countRow++;
+          spanParent.style.gridRow = countRow;
+
+          //trackElem.style.gridRow = 1;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+          trackElem.style.fontSize = "56px";
+
+          spanParent.appendChild(trackElem);
+
+          gridContainerParent.appendChild(spanParent);
+
+          continue;
+
+          /*countRow++;
+          trackElem.style.gridRow = countRow;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+          trackElem.style.fontSize = "56px";*/
+        } else if (i >= 2 && i <= 4) {
+          let spanParent = document.createElement("span");
+          spanParent.className = "track";
+          spanParent.style.transform =
+            "rotate(" + arrayAnglesOfRotation[indexOfArrayAngles] + "deg)";
+          indexOfArrayAngles++;
+
+          if (i == 2) {
+            spanParent.style.gridColumn = i + 1;
+            spanParent.style.gridRow = -i + 1;
+            spanParent.style.marginLeft = "48px";
+            spanParent.style.marginBottom = "40px";
+          } else if (i == 3) {
+            spanParent.style.gridColumn = i + 1;
+            spanParent.style.gridRow = -i + 1;
+
+            spanParent.style.marginTop = "32px";
+            spanParent.style.marginLeft = "80px";
+          } else if (i == 4) {
+            spanParent.style.gridColumn = i;
+            spanParent.style.gridRow = -i;
+            spanParent.style.marginLeft = "32px";
+          }
+
+          //spanParent.style.gridColumn = i;
+          //spanParent.style.gridRow = -i;
+          // spanParent.style.marginLeft = "30px";
+
+          //trackElem.style.gridRow = -i;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+
+          trackElem.style.fontSize = "56px";
+
+          spanParent.appendChild(trackElem);
+
+          gridContainerParent.appendChild(spanParent);
+
+          continue;
+        } else if (i >= 19 && i <= 21) {
+          let spanParent = document.createElement("span");
+          spanParent.className = "track";
+          spanParent.style.transform =
+            "rotate(" + arrayAnglesOfRotation[indexOfArrayAngles] + "deg)";
+          indexOfArrayAngles++;
+
+          spanParent.style.gridColumn = i;
+
+          countRow++;
+
+          if (i == 19) {
+            //spanParent.style.gridColumn = i - 1;
+            spanParent.style.gridRow = countRow;
+          } else if (i == 20) {
+            spanParent.style.gridRow = countRow;
+          } else if (i == 21) {
+            spanParent.style.gridRow = countRow;
+          }
+
+          //trackElem.style.gridRow = -i;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+
+          trackElem.style.fontSize = "56px";
+
+          spanParent.appendChild(trackElem);
+
+          gridContainerParent.appendChild(spanParent);
+
+          continue;
+        } else {
+          let spanParent = document.createElement("span");
+          spanParent.className = "track";
+          spanParent.style.transform =
+            "rotate(" + arrayAnglesOfRotation[indexOfArrayAngles] + "deg)";
+          indexOfArrayAngles++;
+
+          spanParent.style.gridColumn = i;
+          spanParent.style.gridRow = -i;
+
+          //trackElem.style.gridRow = -i;
+          trackElem.innerHTML = "&#xe931;"; //"&#xf108;";
+
+          trackElem.style.fontSize = "56px";
+
+          spanParent.appendChild(trackElem);
+
+          gridContainerParent.appendChild(spanParent);
+
+          continue;
+        }
+
+        //gridContainerParent.appendChild(trackElem);
+      }
+    </script>
+  </body>
+</html>
