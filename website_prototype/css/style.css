@@ -8,30 +8,45 @@ h1 {
   text-align: center;
 }
 
-
 h2 {
   font-family: "JetBrainsMono-Regular";
   width: 1500px;
   height: 30px;
   
+font-style: normal;
+font-weight: 800;
+font-size: 48px;
+line-height: 20px;
+align-items: center;
+text-align: center;
+letter-spacing: 0.5px;
+color: #FFFFFF;
+}
+
+h3 {
+  font-family: "JetBrainsMono-Regular";
+
+  width: 1950px;
+  height: 1px;
+  left: 18px;
+
   font-style: normal;
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 20px;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.5px;
+  font-weight: 10;
+  font-size: 18px;
+  line-height: -50px;
+  
   color: #FFFFFF;
+
 }
 
 .track {
   transform: rotate(135deg);
 
   /*-moz-transform: rotate(135deg);*/ /*for Firefox*/
-  /*-ms-transform: rotate(135deg);*/ /*	for IE  */
+  /*-ms-transform: rotate(135deg);*/ /* for IE  */
   /*-o-transform: rotate(135deg);*/ /*for Opera*/
 
-  /* 	for browsers supporting webkit (such as chrome, firefox, safari etc.). */
+  /*  for browsers supporting webkit (such as chrome, firefox, safari etc.). */
   /*-webkit-transform: rotate(135deg);*/
 
   display: inline-block;
@@ -96,7 +111,7 @@ h2 {
   top: 80%; /* At the bottom of the tooltip */
   left: 90%;
 
-  border-top: 25px solid white;
+  border-top: 25px solid red;
   border-left: 10px solid transparent;
 
   transform: rotate(-30deg);
@@ -113,7 +128,7 @@ h2 {
   width: 120px;
   height: 60px;
   background-color: white;
-  color: black;
+  color: red;
   text-align: center;
   font-size: 18px;
   /*padding: 5px 0;*/
@@ -211,7 +226,7 @@ h2 {
   top: 80%; /* At the bottom of the tooltip */
   left: 60%;
 
-  border-top: 25px solid white;
+  border-top: 25px solid red;
   border-left: 10px solid transparent;
 
   transform: rotate(-15deg);
@@ -267,6 +282,23 @@ h2 {
   padding-top: 20%;
 }
 
+.start-button-text {
+  background-clip: text;
+
+  background: -webkit-linear-gradient(#84ceeb 20%, #8860d0 100%) fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  /* margin: 0 auto;
+    / margin-left: 0.25em;*/
+
+  font-size: 18px !important;
+  line-height: 2.5 !important;
+}
+
 .start-button {
   background: white;
   display: flex;
@@ -299,23 +331,6 @@ h2 {
   transition: all 100ms !important;
 }
 
-.start-button-text {
-  background-clip: text;
-
-  background: -webkit-linear-gradient(#84ceeb 20%, #8860d0 100%) fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
-  /* margin: 0 auto;
-    / margin-left: 0.25em;*/
-
-  font-size: 18px !important;
-  line-height: 2.5 !important;
-}
-
 .next-page-button-text {
   background-clip: text;
 
@@ -324,13 +339,20 @@ h2 {
   -webkit-text-fill-color: transparent;
 
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-align: center;
   /* margin: 0 auto;
     / margin-left: 0.25em;*/
 
   font-size: 18px !important;
-  line-height: 2.5 !important;
+  line-height: 2 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  gap: 10px;
+
 }
 
 .button-to-track-page-container {
@@ -340,6 +362,7 @@ h2 {
 /**/
 
 .icon-button {
+  
   background: white;
   display: flex;
   flex-direction: row;
@@ -354,6 +377,10 @@ h2 {
   padding-left: 0.25em;
   width: fit-content;
   border: none;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
   font-weight: 600;
@@ -384,19 +411,6 @@ h2 {
   box-shadow: 0 0 1px 3px rgba(blue, 0.4);
 }
 
-.button-icon {
-  background-clip: text;
-
-  background: -webkit-linear-gradient(#84ceeb 20%, #8860d0 100%) fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  position: absolute;
-  left: 0.7em;
-
-  font-size: 24px !important;
-  line-height: 1 !important;
-}
 .button-text-content {
   background-clip: text;
 
@@ -413,6 +427,20 @@ h2 {
   font-size: 18px !important;
   line-height: 2.5 !important;
   margin-left: 1.25em;
+}
+
+.button-icon {
+  background-clip: text;
+
+  background: -webkit-linear-gradient(#84ceeb 20%, #8860d0 100%) fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: absolute;
+  left: 0.7em;
+
+  font-size: 20px !important;
+  line-height: 1 !important;
 }
 
 .bottom-container {
