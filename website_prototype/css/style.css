@@ -8,10 +8,20 @@ h1 {
   text-align: center;
 }
 
+
 h2 {
   font-family: "JetBrainsMono-Regular";
+  width: 1500px;
+  height: 30px;
+  
+  font-style: normal;
+  font-weight: 800;
   font-size: 48px;
+  line-height: 20px;
+  align-items: center;
   text-align: center;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
 }
 
 .track {
@@ -86,7 +96,7 @@ h2 {
   top: 80%; /* At the bottom of the tooltip */
   left: 90%;
 
-  border-top: 25px solid red;
+  border-top: 25px solid white;
   border-left: 10px solid transparent;
 
   transform: rotate(-30deg);
@@ -201,7 +211,7 @@ h2 {
   top: 80%; /* At the bottom of the tooltip */
   left: 60%;
 
-  border-top: 25px solid red;
+  border-top: 25px solid white;
   border-left: 10px solid transparent;
 
   transform: rotate(-15deg);
