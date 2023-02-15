@@ -1,3 +1,6 @@
 [submodule "RemLoc-Backend"]
 	path = RemLoc-Backend
 	url = https://github.com/ArtsemHarachau/RemLoc-Backend.git
+[submodule "Angular-Web-App"]
+	path = Angular-Web-App
+	url = https://github.com/ArtsemHarachau/Angular-Web-App.git
